@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const PracticeTest = ({ test }) => {
+    const [selectedAnswers, setSelectedAnswers] = useState({});
+
+    const handleAnswerChange = (questionIndex, selectedAnswer) => {
+      setSelectedAnswers((prevAnswers) => ({
+        ...prevAnswers,
+        [questionIndex]: selectedAnswer,
+      }));
+    };
+  
+    const validateAnswers = () => {
+      let score = 0;
+      test.questions.forEach((question, index) => {
+        if (selectedAnswers[index] === question.correct_answer) {
+          score++;
+        }
+      });
+      alert(`You scored ${score} out of ${test.questions.length} questions.`);
+    };
+        
     return (
       <div>
         {test.questions.map((question, index) => (
@@ -13,6 +32,8 @@ const PracticeTest = ({ test }) => {
                       type="radio"
                       name={`question_${index}`}
                       value={choice}
+                      checked={selectedAnswers[index] === choice}
+                      onChange={() => handleAnswerChange(index, choice)}                      
                     />
                     {text}
                   </p>
@@ -20,6 +41,7 @@ const PracticeTest = ({ test }) => {
             </ul>
           </div>
         ))}
+        <button onClick={validateAnswers}>Submit Answers</button>
       </div>
     );
   };
