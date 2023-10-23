@@ -1,6 +1,6 @@
 import React from 'react';
-import PracticeTest from './PracticeTest'; // Import the PracticeTest component
-import Textbox from '././components/textbox';
+import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
+import Textbox from './components/textbox';
 
 const test = {
   "questions": [
