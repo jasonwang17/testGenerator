@@ -1,6 +1,6 @@
 import React from 'react';
 import PracticeTest from './PracticeTest'; // Import the PracticeTest component
-
+import Textbox from '././components/textbox';
 
 const test = {
   "questions": [
@@ -53,13 +53,14 @@ const test = {
   }
 }
 
-
+// Need the API key for Textbox component
 
 
 function App() {
   return (
     <div className="App">
       <h1>Practice Test (update 9:30pm)</h1>
+      <Textbox/>
       <hr />
       <h2>Test Questions</h2>
       <PracticeTest test={test} />

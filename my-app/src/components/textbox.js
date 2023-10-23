@@ -18,7 +18,7 @@ const TextboxQuery = ({ apiKey }) => {
         },
         body: JSON.stringify({
           prompt: userInput,
-          max_tokens: 50, // Adjust based on your needs
+          max_tokens: 300, // Adjust based on your needs
         }),
       });
 
