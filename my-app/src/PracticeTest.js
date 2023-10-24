@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import LaTeXDiagram from './components/latex';
+
 
 const PracticeTest = ({ test }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -19,12 +21,13 @@ const PracticeTest = ({ test }) => {
       });
       alert(`You scored ${score} out of ${test.questions.length} questions.`);
     };
-        
+
     return (
       <div>
         {test.questions.map((question, index) => (
           <div key={index}>
             <p>{question.question}</p>
+            <LaTeXDiagram/>
             <ul>
               {Object.entries(question.choices).map(([choice, text]) => (
                   <p>
