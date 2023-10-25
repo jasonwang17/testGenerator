@@ -56,11 +56,11 @@ const test = {
 // Need the API key for Textbox component
 
 
-function App() {
+function App({ openai }) {
   return (
     <div className="App">
       <h1>Practice Test (update 9:30pm)</h1>
-      <Textbox/>
+      <Textbox openai = {openai}/>
       <hr />
       <h2>Test Questions</h2>
       <PracticeTest test={test} />

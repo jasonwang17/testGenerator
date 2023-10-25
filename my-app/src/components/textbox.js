@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TextboxQuery = ({ apiKey }) => {
+const TextboxQuery = ({ openai }) => {
   const [userInput, setUserInput] = useState('');
   const [response, setResponse] = useState(null);
 
@@ -18,7 +18,7 @@ const TextboxQuery = ({ apiKey }) => {
         },
         body: JSON.stringify({
           prompt: userInput,
-          max_tokens: 300, // Adjust based on your needs
+          max_tokens: 500, // Adjust based on your needs
         }),
       });
 
