@@ -6,13 +6,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
     "env": "^0.0.2",
+    "katex": "^0.16.9",
     "openai": "^4.13.0",
     "path-browserify": "^1.0.1",
-=======
-    "katex": "^0.16.9",
->>>>>>> 917a76db27e0f74de5753b59b9c83c22b1e620f7
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ios-pwa-prompt": "^1.8.4",
