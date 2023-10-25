@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import LaTeXDiagram from './latex';
+import LaTeXFormula from './mathlatex';
+
 
 const PracticeTest = ({ test }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -19,12 +22,17 @@ const PracticeTest = ({ test }) => {
       });
       alert(`You scored ${score} out of ${test.questions.length} questions.`);
     };
-        
+
+    //below is just a math formula to test
+    const testFormula = "{'\\int_0^\\infty \\frac{e^{-x}}{x!}dx'}";
+
     return (
       <div>
         {test.questions.map((question, index) => (
           <div key={index}>
             <p>{question.question}</p>
+            <LaTeXFormula formula={testFormula}/>
+            <LaTeXDiagram/>
             <ul>
               {Object.entries(question.choices).map(([choice, text]) => (
                   <p>
