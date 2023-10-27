@@ -3,6 +3,7 @@ import PracticeTest from './components/PracticeTest'; // Import the PracticeTest
 import OpenAI_Test from './components/openai';
 
 
+// Get from openai.js
 const test = {
   "questions": [
     {
@@ -55,15 +56,16 @@ const test = {
 }
 
 // Need the API key for Textbox component
-
-
+// Some sort of pascal casing needed for some niche component capitalization -- dunno why
 function App() {
   return (
     <div className="App">
-      <h1>Practice Test (update 9:30pm)</h1>
+      <h1>Generate a practice test</h1>
+      <h3>Enter a calculus subject: </h3>
+      <OpenAI_Test />
+      <h1>Practice Test (update 11:30 am)</h1>
       <hr />
       <h2>Test Questions</h2>
-      <OpenAI_Test />
       <PracticeTest test={test} />
     </div>
   );

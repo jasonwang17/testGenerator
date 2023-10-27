@@ -12,7 +12,7 @@ function OpenAI_Test() {
         messages: [{"role": "user",
         "content": "Create a practice test in JSON format on: " + input +
         "it should consist of questions with answer options as A, B, C, or D, and an answer key " + 
-        "with questions notated as 'question_<number goes here>'."}],
+        "with questions notated as 'question_<number goes here>'. Remember units"}],
         temperature: 0.9,
         max_tokens: 500
       }, {

@@ -4,7 +4,6 @@ import LaTeXFormula from './mathlatex';
 
 const PracticeTest = ({ test }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});
-
     const handleAnswerChange = (questionIndex, selectedAnswer) => {
       setSelectedAnswers((prevAnswers) => ({
         ...prevAnswers,
