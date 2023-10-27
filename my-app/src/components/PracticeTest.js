@@ -1,7 +1,7 @@
 import React, { useState  } from 'react';
 import TikzGraph from './latex';
 import LaTeXFormula from './mathlatex';
-
+import './App.css';
 
 const PracticeTest = ({ test }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});

@@ -1,38 +1,109 @@
+/* App.css */
+
+/* Styles for the main container */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header styles */
+h1 {
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* TextboxQuery component styles */
+#textbox-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Input field styles */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Button styles */
+button {
+  background-color: #0074d9;
   color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Response container styles */
+#response-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+/* PracticeTest component styles */
+#practice-test-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+/* Question styles */
+.question {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* LaTeX formula styles */
+.math-formula {
+  margin: 10px 0;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* Tikz diagram styles */
+.tikz-diagram {
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Choices styles */
+.choices {
+  margin-top: 10px;
+}
+
+/* Radio button styles */
+.choices input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Result styles */
+.result {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Footer styles */
+hr {
+  margin: 20px 0;
 }
