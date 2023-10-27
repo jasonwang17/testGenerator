@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
-
 const TextboxQuery = () => {
   const [userInput, setUserInput] = useState('');
   const [response, setResponse] = useState(null);
@@ -12,21 +10,26 @@ const TextboxQuery = () => {
   };
 
   const fetchData = async () => {
-    const response = await axios.post(
-      "https://api.openai.com/v1/engines/davinci/completions",
-      {
-        prompt: `${userInput}`,
-        max_tokens: 50,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+    try{
+      const response = await axios.post(
+        "https://api.openai.com/v1/engines/davinci/completions",
+        {
+          prompt: `Generate a calculus question related to: ${userInput}`,
+          max_tokens: 100,
+          temperature: 0,
         },
-      }
-    );
-  
-    setResponse(response.data.choices[0].text);
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer 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`,
+          },
+        }
+      );
+      setResponse(response.data.choices[0].text);
+    }
+    catch (error) {
+      console.error("Error in API request:", error);
+    }
   };
 
   const downloadResponseJSON = () => {
