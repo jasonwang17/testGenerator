@@ -6,16 +6,10 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import PWAPrompt from 'react-ios-pwa-prompt';
 
-const { Configuration, OpenAIApi } = require("openai");
-require('dotenv').config()
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App openai = {openai}/>
+    <App />
     <PWAPrompt
       promptOnVisit={1}
       timesToShow={3}

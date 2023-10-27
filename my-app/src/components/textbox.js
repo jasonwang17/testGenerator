@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
-const TextboxQuery = ({ openai }) => {
+
+
+const TextboxQuery = () => {
   const [userInput, setUserInput] = useState('');
   const [response, setResponse] = useState(null);
 
@@ -8,31 +11,22 @@ const TextboxQuery = ({ openai }) => {
     setUserInput(event.target.value);
   };
 
-  const handleGenerateResponse = async () => {
-    try {
-      const response = await fetch('https://api.openai.com/v1/engines/davinci/completions', {
-        method: 'POST',
+  const fetchData = async () => {
+    const response = await axios.post(
+      "https://api.openai.com/v1/engines/davinci/completions",
+      {
+        prompt: `${userInput}`,
+        max_tokens: 50,
+      },
+      {
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          Authorization: `Bearer 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`,
         },
-        body: JSON.stringify({
-          prompt: userInput,
-          max_tokens: 500, // Adjust based on your needs
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setResponse(data);
-      } else {
-        console.error('Error:', response.statusText);
-        setResponse({ error: 'Error occurred while calling the OpenAI API.' });
       }
-    } catch (error) {
-      console.error('Error:', error);
-      setResponse({ error: 'Error occurred while processing the request.' });
-    }
+    );
+  
+    setResponse(response.data.choices[0].text);
   };
 
   const downloadResponseJSON = () => {
@@ -59,7 +53,7 @@ const TextboxQuery = ({ openai }) => {
           onChange={handleInputChange}
         />
       </div>
-      <button onClick={handleGenerateResponse}>Generate Response</button>
+      <button onClick={fetchData}>Generate Response</button>
       <button onClick={downloadResponseJSON} disabled={!response}>
         Download Response as JSON
       </button>
