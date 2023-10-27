@@ -11,8 +11,8 @@ function OpenAI_Test({ onValueChange }) {
         model: "gpt-3.5-turbo",
         messages: [{"role": "user", "content": input}],
         temperature: 0.7,
-      }, 
-      {
+        max_tokens: 150
+      }, {
         headers: {
           'Authorization': 'Bearer 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',
           'Content-Type': 'application/json'

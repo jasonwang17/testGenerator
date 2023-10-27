@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
-import Textbox from './components/textbox';
 import OpenAI_Test from './components/openai';
 
 
-const testJson = {
+const test = {
   "questions": [
     {
       "question": "A ladder is leaning against a wall, and the base of the ladder is sliding away from the wall at a rate of 2 feet per second. If the ladder is 10 feet long and is initially 6 feet away from the wall, how fast is the top of the ladder sliding down the wall?",
@@ -47,7 +46,15 @@ const testJson = {
       "correct_answer": "C"
     }
   ],
+  "answer_key": {
+    "question_1": "A",
+    "question_2": "C",
+    "question_3": "B",
+    "question_4": "C"
+  }
 }
+
+// Need the API key for Textbox component
 
 
 function App() {
@@ -61,13 +68,14 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Practice Test (update 9:30pm)</h1>
-      <Textbox />
+      <h1>Generate a practice test</h1>
+      <h3>Enter a calculus subject: </h3>
+      <OpenAI_Test />
+      <h1>Practice Test (update 11:30 am)</h1>
       <hr />
       <h2>Test Questions</h2>
-      <OpenAI_Test onValueChange={handleChildValueChange}/>
-      {showTest && <PracticeTest test={test} />}
-
+      <OpenAI_Test />
+      <PracticeTest test={test} />
     </div>
   );
 }

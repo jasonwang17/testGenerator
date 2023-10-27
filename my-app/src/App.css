@@ -17,18 +17,18 @@ h1 {
   margin-bottom: 20px; /* Increased margin for spacing */
 }
 
-/* TextboxQuery component styles */
-#textbox-container {
-  margin-top: 20px;
-  padding: 20px;
+/* OpenAI_Test component styles */
+#openai-test-container {
+  margin-top: 10px;
+  padding: 10px;
   background-color: #fff; /* White background */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow for a modern look */
   border-radius: 10px; /* Slightly rounded corners */
 }
 
-/* Input field styles */
-input[type="text"] {
-  width: 80%; /* Reduce the width of the input field to 80% */
+/* Input textarea styles */
+textarea {
+  width: 80%; /* Adjust the width of the input textarea as needed */
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -36,7 +36,7 @@ input[type="text"] {
   margin-bottom: 15px;
 }
 
-/* Button styles */
+/* "Ask" button styles */
 button {
   background-color: #0074d9;
   color: #fff;
@@ -45,13 +45,8 @@ button {
   padding: 12px 24px;
   font-size: 16px;
   cursor: pointer;
-  margin-right: 10px;
   transition: background-color 0.3s;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  margin-left: 10px; /* Provide some spacing between the input and the button */
 }
 
 button:hover {
@@ -70,6 +65,7 @@ button:hover {
 /* PracticeTest component styles */
 #practice-test-container {
   margin-top: 20px;
+  
 }
 
 /* Question styles */
