@@ -10,8 +10,8 @@ function OpenAI_Test() {
       const result = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: "gpt-3.5-turbo",
         messages: [{"role": "user", "content": input}],
-        temperature: 0.7,
-        max_tokens: 150
+        temperature: 0.2,
+        max_tokens: 250
       }, {
         headers: {
           'Authorization': 'Bearer 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',

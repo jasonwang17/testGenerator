@@ -1,6 +1,5 @@
 import React from 'react';
 import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
-import Textbox from './components/textbox';
 import OpenAI_Test from './components/openai';
 
 
@@ -62,7 +61,6 @@ function App() {
   return (
     <div className="App">
       <h1>Practice Test (update 9:30pm)</h1>
-      <Textbox />
       <hr />
       <h2>Test Questions</h2>
       <OpenAI_Test />
