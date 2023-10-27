@@ -9,9 +9,12 @@ function OpenAI_Test() {
     try {
       const result = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: "gpt-3.5-turbo",
-        messages: [{"role": "user", "content": input}],
-        temperature: 0.2,
-        max_tokens: 250
+        messages: [{"role": "user",
+        "content": "Create a practice test in JSON format on: " + input +
+        "it should consist of questions with answer options as A, B, C, or D, and an answer key " + 
+        "with questions notated as 'question_<number goes here>'."}],
+        temperature: 0.9,
+        max_tokens: 500
       }, {
         headers: {
           'Authorization': 'Bearer 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',
