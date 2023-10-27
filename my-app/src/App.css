@@ -2,14 +2,18 @@
 
 /* Styles for the main container */
 .App {
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
   text-align: center;
   margin: 20px;
+  background-color: lightblue;
+  padding: 20px; /* Increase padding for more spacing */
 }
 
 /* Header styles */
 h1 {
   color: #333;
+  font-size: 24px; /* Larger font size for the header */
 }
 
 /* TextboxQuery component styles */
@@ -17,7 +21,8 @@ h1 {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px; /* Increased border radius for rounded corners */
+  background-color: white;
 }
 
 /* Input field styles */
@@ -27,7 +32,7 @@ input[type="text"] {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Increased margin for more spacing */
 }
 
 /* Button styles */
@@ -36,10 +41,10 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Larger button size */
   font-size: 16px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 15px; /* Increased margin for more spacing */
 }
 
 button:disabled {
@@ -52,7 +57,7 @@ button:disabled {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #f7f7f7;
 }
 
@@ -61,45 +66,46 @@ button:disabled {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #f7f7f7;
 }
 
 /* Question styles */
 .question {
-  margin: 10px 0;
+  margin: 15px 0; /* Increased margin for more spacing */
   font-weight: bold;
+  font-size: 18px; /* Larger font size for questions */
 }
 
 /* LaTeX formula styles */
 .math-formula {
-  margin: 10px 0;
+  margin: 15px 0; /* Increased margin for more spacing */
   font-style: italic;
-  font-size: 18px;
+  font-size: 20px; /* Larger font size for math formulas */
 }
 
 /* Tikz diagram styles */
 .tikz-diagram {
-  margin: 10px 0;
+  margin: 15px 0; /* Increased margin for more spacing */
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 20px; /* Increased padding for Tikz diagrams */
   background-color: white;
 }
 
 /* Choices styles */
 .choices {
-  margin-top: 10px;
+  margin-top: 15px; /* Increased margin for more spacing */
 }
 
 /* Radio button styles */
 .choices input[type="radio"] {
-  margin-right: 5px;
+  margin-right: 10px; /* Increased margin for radio buttons */
 }
 
 /* Result styles */
 .result {
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 15px; /* Increased margin for more spacing */
   color: #333;
 }
 
