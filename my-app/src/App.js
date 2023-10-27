@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
 import Textbox from './components/textbox';
 import OpenAI_Test from './components/openai';
 
 
-const test = {
+const testJson = {
   "questions": [
     {
       "question": "A ladder is leaning against a wall, and the base of the ladder is sliding away from the wall at a rate of 2 feet per second. If the ladder is 10 feet long and is initially 6 feet away from the wall, how fast is the top of the ladder sliding down the wall?",
@@ -47,26 +47,27 @@ const test = {
       "correct_answer": "C"
     }
   ],
-  "answer_key": {
-    "question_1": "A",
-    "question_2": "C",
-    "question_3": "B",
-    "question_4": "C"
-  }
 }
-
-// Need the API key for Textbox component
 
 
 function App() {
+  const [test, setTest] = useState('');
+  const [showTest, setShowTest] = useState(false);
+
+  // Function to update the parent component's state with the child value
+  const handleChildValueChange = (value) => {
+    setTest(JSON.parse(value));
+    setShowTest(true)
+  };
   return (
     <div className="App">
       <h1>Practice Test (update 9:30pm)</h1>
       <Textbox />
       <hr />
       <h2>Test Questions</h2>
-      <OpenAI_Test />
-      <PracticeTest test={test} />
+      <OpenAI_Test onValueChange={handleChildValueChange}/>
+      {showTest && <PracticeTest test={test} />}
+
     </div>
   );
 }

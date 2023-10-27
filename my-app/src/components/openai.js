@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function OpenAI_Test() {
+function OpenAI_Test({ onValueChange }) {
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
 
@@ -11,14 +11,16 @@ function OpenAI_Test() {
         model: "gpt-3.5-turbo",
         messages: [{"role": "user", "content": input}],
         temperature: 0.7,
-        max_tokens: 150
-      }, {
+      }, 
+      {
         headers: {
           'Authorization': 'Bearer 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',
           'Content-Type': 'application/json'
         }
       });
-      setResponse(result.data.choices[0].message.content);
+      const retrievedResponse = result.data.choices[0].message.content;
+      onValueChange(retrievedResponse)
+      setResponse(retrievedResponse);
     } catch (error) {
       console.error('There was an error calling the API', error);
     }

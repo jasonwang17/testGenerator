@@ -37,13 +37,13 @@ const PracticeTest = ({ test }) => {
     \\end{tikzpicture}
     `;
 
+    console.log({test});
+
     return (
       <div>
         {test.questions.map((question, index) => (
           <div key={index}>
             <p>{question.question}</p>
-            <LaTeXFormula formula={testFormula}/>
-            <TikzGraph latexCode={tikzCode}/>
             <ul>
               {Object.entries(question.choices).map(([choice, text]) => (
                   <p>
