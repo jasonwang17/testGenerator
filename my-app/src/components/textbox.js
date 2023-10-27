@@ -47,11 +47,12 @@ const TextboxQuery = () => {
 
   return (
     <div>
-      <h1>Textbox Query</h1>
+      <hr></hr>
+      <h3>What calculus topic do you want tested?</h3>
       <div>
         <input
           type="text"
-          placeholder="Enter your input"
+          placeholder="Calculus topic"
           value={userInput}
           onChange={handleInputChange}
         />

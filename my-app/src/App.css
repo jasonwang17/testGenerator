@@ -7,32 +7,33 @@
   text-align: center;
   margin: 20px;
   background-color: lightblue;
-  padding: 20px; /* Increase padding for more spacing */
+  padding: 20px;
 }
 
 /* Header styles */
 h1 {
   color: #333;
-  font-size: 24px; /* Larger font size for the header */
+  font-size: 24px;
 }
 
 /* TextboxQuery component styles */
 #textbox-container {
   margin-top: 20px;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px; /* Increased border radius for rounded corners */
+  border: 2px solid #0074d9; /* Modern border style */
+  border-radius: 10px;
   background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a modern look */
 }
 
 /* Input field styles */
 input[type="text"] {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+  padding: 12px; /* Slightly larger padding */
+  font-size: 18px; /* Larger font size */
+  border: 2px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 15px; /* Increased margin for more spacing */
+  margin-bottom: 20px; /* Increased margin for more spacing */
 }
 
 /* Button styles */
@@ -41,10 +42,11 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 12px 24px; /* Larger button size */
-  font-size: 16px;
+  padding: 12px 24px;
+  font-size: 18px; /* Larger font size */
   cursor: pointer;
-  margin-right: 15px; /* Increased margin for more spacing */
+  margin-right: 20px; /* Increased margin for more spacing */
+  transition: background-color 0.3s; /* Smooth hover effect */
 }
 
 button:disabled {
@@ -52,60 +54,67 @@ button:disabled {
   cursor: not-allowed;
 }
 
+button:hover {
+  background-color: #0056a7; /* Darker color on hover */
+}
+
 /* Response container styles */
 #response-container {
   margin-top: 20px;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 2px solid #0074d9;
   border-radius: 10px;
   background-color: #f7f7f7;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* PracticeTest component styles */
 #practice-test-container {
   margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #f7f7f7;
 }
 
 /* Question styles */
 .question {
-  margin: 15px 0; /* Increased margin for more spacing */
+  margin: 20px 0; /* Increased margin for more spacing */
   font-weight: bold;
-  font-size: 18px; /* Larger font size for questions */
+  font-size: 20px; /* Larger font size for questions */
+  padding: 15px; /* Spacious box-like design for questions */
+  background-color: #f7f7f7; /* Light gray background for questions */
+  border: 2px solid #ccc; /* Border for questions */
+  border-radius: 10px;
 }
 
 /* LaTeX formula styles */
 .math-formula {
-  margin: 15px 0; /* Increased margin for more spacing */
+  margin: 20px 0; /* Increased margin for more spacing */
   font-style: italic;
-  font-size: 20px; /* Larger font size for math formulas */
+  font-size: 22px; /* Larger font size for math formulas */
 }
 
 /* Tikz diagram styles */
 .tikz-diagram {
-  margin: 15px 0; /* Increased margin for more spacing */
-  border: 1px solid #ddd;
-  padding: 20px; /* Increased padding for Tikz diagrams */
+  margin: 20px 0; /* Increased margin for more spacing */
+  border: 2px solid #ccc;
+  padding: 20px;
   background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Choices styles */
 .choices {
-  margin-top: 15px; /* Increased margin for more spacing */
+  margin-top: 20px; /* Increased margin for more spacing */
 }
 
 /* Radio button styles */
 .choices input[type="radio"] {
-  margin-right: 10px; /* Increased margin for radio buttons */
+  margin-right: 15px; /* Increased margin for radio buttons */
 }
 
 /* Result styles */
 .result {
   font-weight: bold;
-  margin-top: 15px; /* Increased margin for more spacing */
+  margin-top: 20px; /* Increased margin for more spacing */
   color: #333;
 }
 
