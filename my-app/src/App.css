@@ -19,8 +19,8 @@ h1 {
 
 /* OpenAI_Test component styles */
 #openai-test-container {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 10px;
+  padding: 10px;
   background-color: #fff; /* White background */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow for a modern look */
   border-radius: 10px; /* Slightly rounded corners */
@@ -62,10 +62,10 @@ button:hover {
   border-radius: 10px;
 }
 
-
 /* PracticeTest component styles */
 #practice-test-container {
   margin-top: 20px;
+  
 }
 
 /* Question styles */
