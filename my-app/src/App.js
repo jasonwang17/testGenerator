@@ -1,6 +1,8 @@
 import React from 'react';
 import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
 import Textbox from './components/textbox';
+import OpenAI_Test from './components/openai';
+
 
 const test = {
   "questions": [
@@ -63,6 +65,7 @@ function App() {
       <Textbox />
       <hr />
       <h2>Test Questions</h2>
+      <OpenAI_Test />
       <PracticeTest test={test} />
     </div>
   );
