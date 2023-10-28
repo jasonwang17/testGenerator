@@ -41,18 +41,19 @@ Below is a sample response format for you to follow:
             console.error('There was an error calling the API', error);
         }
     };
-
-  return (
-    <div className="App">
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter any AP calculus subject ..."
-      />
-      <button onClick={callAPI}>Generate Test</button>
-
-    </div>
-  );
+    return (
+      <div className="App">
+        <div className="input-container">
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Enter any AP calculus subject ..."
+          />
+          <button onClick={callAPI}>Generate Test</button>
+        </div>
+      </div>
+    );
+    
 }
 
 export default OpenAI_Test;

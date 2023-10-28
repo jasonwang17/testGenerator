@@ -28,7 +28,7 @@ h1 {
 
 /* Input textarea styles */
 textarea {
-  width: 80%; /* Adjust the width of the input textarea as needed */
+  width: 80%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -46,7 +46,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-left: 10px; /* Provide some spacing between the input and the button */
+  margin-left: 5px; /* Reduce the margin to align the button with the input */
 }
 
 button:hover {
@@ -65,7 +65,13 @@ button:hover {
 /* PracticeTest component styles */
 #practice-test-container {
   margin-top: 20px;
-  
+}
+
+.input-container {
+  display: flex;
+  align-items: center; /* Vertically center the elements */
+  justify-content: center; /* Horizontally center the elements */
+  gap: 10px; /* Adjust the gap between the textarea and button as needed */
 }
 
 /* Question styles */
