@@ -47,9 +47,9 @@ Below is a sample response format for you to follow:
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Inter any AP calculus subject ..."
+        placeholder="Enter any AP calculus subject ..."
       />
-      <button onClick={callAPI}>Ask</button>
+      <button onClick={callAPI}>Generate Test</button>
 
     </div>
   );
