@@ -5,11 +5,9 @@ import { BlockMath } from 'react-katex';
 const LaTeXFormula = (props) => {
 
     return (
-      <div>
         <BlockMath
           math={props.formula}
         />
-      </div>
     );
   };
 

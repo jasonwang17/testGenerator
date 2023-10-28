@@ -1,6 +1,41 @@
 import React, { useState  } from 'react';
-import TikzGraph from './latex';
 import LaTeXFormula from './mathlatex';
+import { MathJax, MathJaxContext } from "better-react-mathjax";
+
+
+function renderTextAndLatex(inputString) {
+  const latexRegex = /\$(.*?)\$/g;
+  const matches = inputString.match(latexRegex);
+  const segments = inputString.split(latexRegex);
+  console.log("all segments:", segments);
+  console.log("all matches:", matches);
+
+  if (!matches) {
+    // No LaTeX code found in the input, it's entirely regular text
+    return <span>{inputString}</span>;
+  }
+
+  const processedSegments = segments.map((segment, index) => {
+    if (matches.includes('$'+segment+'$')) {
+      console.log("inside if segment:", segment)
+      const latexCode = segment.slice(1, -1);
+      return (
+        <React.Fragment key={index}>
+          {/* Render the LaTeX code using your LaTeX rendering component */}
+          <MathJax.Provider>
+            <MathJax.Node inline formula={latexCode} />
+          </MathJax.Provider>
+        </React.Fragment>        
+      );
+    } else {
+      // Render regular text
+      console.log("regaul text:", segment)
+      return <span key={index}>{segment}</span>;
+    }
+  });
+
+  return <>{processedSegments}</>;
+}
 
 const PracticeTest = ({ test }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -23,26 +58,32 @@ const PracticeTest = ({ test }) => {
 
     //below is just a math formula to test
     const testFormula = "{'\\int_0^\\infty \\frac{e^{-x}}{x!}dx'}";
-
-    //below is a tikz diagram to test (will delete later)
-    const tikzCode = `
-    \\begin{tikzpicture}
-      \\draw[->] (-1,0) -- (3,0) node[right] {$x$};
-      \\draw[->] (0,-1) -- (0,3) node[above] {$y$};
-      \\draw[blue,thick] (-0.5,0) -- (1,2) -- (2.5,0);
-      \\fill[red] (-0.5,0) circle (2pt);
-      \\fill[red] (1,2) circle (2pt);
-      \\fill[red] (2.5,0) circle (2pt);
-    \\end{tikzpicture}
-    `;
-
-    console.log({test});
-
+    const config = {
+      loader: { load: ["[tex]/html"] },
+      tex: {
+        packages: { "[+]": ["html"] },
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"]
+        ],
+        displayMath: [
+          ["$$", "$$"],
+          ["\\[", "\\]"]
+        ]
+      }
+    };
+    
     return (
       <div>
         {test.questions.map((question, index) => (
           <div key={index}>
-            <p>{question.question}</p>
+            <p>
+            <MathJaxContext version={3} config={config}>
+              <MathJax hideUntilTypeset={"first"}>
+              {question.question}
+              </MathJax>
+            </MathJaxContext>
+            </p>
             <ul>
               {Object.entries(question.choices).map(([choice, text]) => (
                   <p>

@@ -5,19 +5,22 @@ function OpenAI_Test({ onValueChange }) {
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
   const gptinput = `
-  Generate a practice test with 5 questions about ${input} for AP calculus BC. Overall result should be JSON format. For each question provide 4 choices (A,B,C,D) with only one of them is correct answer. For each graph-based questions, return a JSON property to indicate it's graph problem, and include latex code rather than an image or text. For each question return a correct answer key.
-Below is a sample response format for you to follow:
-"questions": [
-{
-"question": "body of the question",
-"choices": {
-"A": "1 ft/s",
-"B": "2 ft/s",
-"C": "3 ft/s",
-"D": "4 ft/s"
-},
-"correct_answer": "A"
-} `
+  Generate a practice test with 5 questions about ${input} for AP calculus BC. Overall result should be JSON format. For each question provide 4 choices (A,B,C,D) with only one of them is correct answer.
+  For each question return a correct answer key, and use latex code to describe math formula.
+  make sure each latex code section is wrapped with $
+  Below is a sample response format for you to follow:
+  "questions": [
+  {
+  "question": "body of the question",
+  "choices": {
+  "A": "1 ft/s",
+  "B": "2 ft/s",
+  "C": "3 ft/s",
+  "D": "4 ft/s"
+  },
+  "correct_answer": "A"
+  }
+`
 
 
     const callAPI = async () => {
