@@ -72,6 +72,7 @@ function App() {
       <h3>Enter a calculus subject: </h3>
       <OpenAI_Test onValueChange={handleChildValueChange}/>
       <hr />
+      <div class="loader"></div>
       {showTest && <PracticeTest test={test} />}
     </div>
   );
