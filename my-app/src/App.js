@@ -70,12 +70,10 @@ function App() {
     <div className="App">
       <h1>Generate a practice test</h1>
       <h3>Enter a calculus subject: </h3>
-      <OpenAI_Test />
+      <OpenAI_Test onValueChange={handleChildValueChange}/>
       <h1>Practice Test (update 11:30 am)</h1>
       <hr />
-      <h2>Test Questions</h2>
-      <OpenAI_Test />
-      <PracticeTest test={test} />
+      {showTest && <PracticeTest test={test} />}
     </div>
   );
 }
