@@ -37,7 +37,7 @@ function renderTextAndLatex(inputString) {
   return <>{processedSegments}</>;
 }
 
-const PracticeTest = ({ test }) => {
+const PracticeTest = ({ test, onReturn }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});
     const handleAnswerChange = (questionIndex, selectedAnswer) => {
       setSelectedAnswers((prevAnswers) => ({
@@ -56,6 +56,11 @@ const PracticeTest = ({ test }) => {
       alert(`You scored ${score} out of ${test.questions.length} questions.`);
     };
 
+    //implement ReturnToGenerate
+    const ReturnToGenerate = () => {
+      onReturn()
+    }
+
     //below is just a math formula to test
     const testFormula = "{'\\int_0^\\infty \\frac{e^{-x}}{x!}dx'}";
     const config = {
@@ -72,35 +77,44 @@ const PracticeTest = ({ test }) => {
         ]
       }
     };
-    
+
     return (
       <div>
         {test.questions.map((question, index) => (
           <div key={index}>
             <p>
             <MathJaxContext version={3} config={config}>
-              <MathJax hideUntilTypeset={"first"}>
-              {question.question}
-              </MathJax>
+              <div class="question-description">
+                <MathJax hideUntilTypeset={"first"}>
+                  Question {index+1}: {question.question}
+                </MathJax>
+              </div>
             </MathJaxContext>
             </p>
-            <ul>
-              {Object.entries(question.choices).map(([choice, text]) => (
-                  <p>
-                    <input
-                      type="radio"
-                      name={`question_${index}`}
-                      value={choice}
-                      checked={selectedAnswers[index] === choice}
-                      onChange={() => handleAnswerChange(index, choice)}                      
-                    />
-                    {text}
-                  </p>
-              ))}
-            </ul>
+            <div class="choices">
+              <ul>
+                {Object.entries(question.choices).map(([choice, text]) => (
+                    <MathJaxContext version={3} config={config}>
+                      <div class="choice">
+                      <MathJax hideUntilTypeset={"first"}>
+                        <input
+                          type="radio"
+                          name={`question_${index}`}
+                          value={choice}
+                          checked={selectedAnswers[index] === choice}
+                          onChange={() => handleAnswerChange(index, choice)}                      
+                        />
+                        {text}
+                        </MathJax>
+                        </div>
+                    </MathJaxContext>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
         <button onClick={validateAnswers}>Submit Answers</button>
+        <button onClick={ReturnToGenerate}>Back to Question Generate</button>
       </div>
     );
   };
