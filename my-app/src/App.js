@@ -74,15 +74,13 @@ function App() {
     setShowGen(true)
   };
 
-  
-
   return (
     <div className="App">
       <h1>Generate a practice test</h1>
       <h3>Enter a calculus subject: </h3>
       {showGen && <OpenAI_Test onValueChange={handleChildValueChange}/>}
       <hr />
-      <div class="loader"></div>
+
       {showTest && <PracticeTest test={test} onReturn={HandleTestReturn} />}
     </div>
   );
