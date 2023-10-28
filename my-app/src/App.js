@@ -60,20 +60,30 @@ const test = {
 function App() {
   const [test, setTest] = useState('');
   const [showTest, setShowTest] = useState(false);
+  const [showGen, setShowGen] = useState(true);
 
   // Function to update the parent component's state with the child value
   const handleChildValueChange = (value) => {
     setTest(JSON.parse(value));
+    setShowGen(false)
     setShowTest(true)
   };
+
+  const HandleTestReturn = () => {
+    setShowTest(false)
+    setShowGen(true)
+  };
+
+  
+
   return (
     <div className="App">
       <h1>Generate a practice test</h1>
       <h3>Enter a calculus subject: </h3>
-      <OpenAI_Test onValueChange={handleChildValueChange}/>
+      {showGen && <OpenAI_Test onValueChange={handleChildValueChange}/>}
       <hr />
       <div class="loader"></div>
-      {showTest && <PracticeTest test={test} />}
+      {showTest && <PracticeTest test={test} onReturn={HandleTestReturn} />}
     </div>
   );
 }
