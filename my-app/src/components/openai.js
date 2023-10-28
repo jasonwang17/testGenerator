@@ -6,10 +6,10 @@ function OpenAI_Test({ onValueChange }) {
   const [response, setResponse] = useState('');
   const [showLoader, setShowLoader] = useState(false);
   const gptinput = `
-  Generate a practice test with 5 questions about ${input} for AP calculus BC. Overall result should be JSON format. For each question provide 4 choices (A,B,C,D) with only one of them is correct answer.
-  For each question return a correct answer key, and use latex code to describe math formula.
-  make sure each latex code section is wrapped with $
-  Below is a sample response format for you to follow:
+  Generate a practice test with 5 questions about ${input} for AP calculus. The overall result should be JSON format. For each question provide 4 choices (A,B,C,D) with only one of them is correct answer.
+  For each question return a correct answer key, using latex code to describe the math formula.
+  make sure each latex code section is wrapped with '$', and keeps in mind units and constants such as pi.
+  Below is a sample response format to follow:
   "questions": [
   {
   "question": "body of the question",
@@ -49,11 +49,12 @@ function OpenAI_Test({ onValueChange }) {
     };
     return (
       <div className="App">
+        <h1>Generate a practice test for a calculus subject below!</h1>
         <div className="input-container">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter any AP calculus subject ..."
+            placeholder="Enter any AP calculus subject and AI will generate it for you!"
           />
           <button onClick={callAPI}>Generate Test</button>
           {showLoader && <div className="loader"></div>}

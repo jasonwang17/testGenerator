@@ -54,9 +54,6 @@ const test = {
   }
 }
 
-// Need the API key for Textbox component
-
-
 function App() {
   const [test, setTest] = useState('');
   const [showTest, setShowTest] = useState(false);
@@ -76,8 +73,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Generate a practice test</h1>
-      <h3>Enter a calculus subject: </h3>
       {showGen && <OpenAI_Test onValueChange={handleChildValueChange}/>}
       <hr />
 

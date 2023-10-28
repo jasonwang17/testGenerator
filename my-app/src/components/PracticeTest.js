@@ -114,7 +114,7 @@ const PracticeTest = ({ test, onReturn }) => {
           </div>
         ))}
         <button onClick={validateAnswers}>Submit Answers</button>
-        <button onClick={ReturnToGenerate}>Back to Question Generate</button>
+        <button onClick={ReturnToGenerate}>Return to Question Generator</button>
       </div>
     );
   };
