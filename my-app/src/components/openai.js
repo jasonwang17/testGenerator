@@ -6,18 +6,19 @@ function OpenAI_Test({ onValueChange }) {
   const [response, setResponse] = useState('');
   const [showLoader, setShowLoader] = useState(false);
   const gptinput = `
-  Generate a practice test with 5 questions about ${input} for AP calculus. The overall result should be JSON format. For each question provide 4 choices (A,B,C,D) with only one of them is correct answer.
-  For each question return a correct answer key, using latex code to describe the math formula.
-  make sure each latex code section is wrapped with '$', and keeps in mind units and constants such as pi.
+  You are a math teacher that wants to ensure that your students understand the concepts you have been teaching.
+  Generate a practice test with 5 questions about ${input} for AP calculus. The overall result should be JSON format. For each question provide 4 choices (A,B,C,D) with only one of them as correct answer.
+  For each question return a correct answer key, using latex code to describe any mathematical expressions or formulas in both questions and answers.
+  make sure each latex code section is wrapped with '$', and keeps in mind units and constants such as pi. Finally, make sure all questions are correct and revelevant.
   Below is a sample response format to follow:
   "questions": [
   {
-  "question": "body of the question",
+  "question": "$body of the question$",
   "choices": {
-  "A": "1 ft/s",
-  "B": "2 ft/s",
-  "C": "3 ft/s",
-  "D": "4 ft/s"
+  "A": "$1$ ft/s",
+  "B": "$2$ ft/s$",
+  "C": "$3$ ft/s$",
+  "D": "$4$ ft/s$"
   },
   "correct_answer": "A"
   }
