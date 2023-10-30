@@ -49,7 +49,6 @@ function OpenAI_Test({ onValueChange }) {
     };
     return (
       <div className="App">
-        <h1>Enter any AP calculus subject and AI will generate a practice test for you!</h1>
         <div className="input-container">
           <textarea
             value={input}

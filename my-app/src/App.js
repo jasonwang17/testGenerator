@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
 import OpenAI_Test from './components/openai';
-import bannerImage from './images/banner.jpg';
+import bannerImage from './images/welcome.png';
 
 
 const test = {
