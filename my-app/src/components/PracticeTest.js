@@ -79,7 +79,7 @@ const PracticeTest = ({ test, onReturn }) => {
     };
 
     return (
-      <div>
+      <div class="question">
         {test.questions.map((question, index) => (
           <div key={index}>
             <p>

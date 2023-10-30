@@ -67,23 +67,16 @@ button:hover {
   margin-top: 20px;
 }
 
-.input-container {
-  display: flex;
-  align-items: center; /* Vertically center the elements */
-  justify-content: center; /* Horizontally center the elements */
-  gap: 10px; /* Adjust the gap between the textarea and button as needed */
-}
 
 /* Question styles */
 .question {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 18px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  padding: 15px; /* Inner space */
+  margin-bottom: 20px; /* Space between questions */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 /* LaTeX formula styles */
 .math-formula {
@@ -103,7 +96,11 @@ button:hover {
 
 /* Choices styles */
 .choices {
-  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.choice {
+  margin-bottom: 10px;
 }
 
 /* Radio button styles */
@@ -165,4 +162,48 @@ button:hover {
 /* Footer styles */
 hr {
   margin: 20px 0;
+}
+
+.banner {
+  width: 100%;  /* Make the banner span the full width of its container */
+  max-height: 200px; /* Restrict the maximum height */
+  object-fit: cover; /* Ensure the image covers the space without being stretched */
+  margin-bottom: 20px; /* Add some space below the banner */
+}
+
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the items horizontally */
+  gap: 15px; /* Space between child items */
+  max-width: 500px; /* You can adjust as necessary */
+  margin: 20px auto; /* Auto margins for horizontal centering */
+}
+
+
+textarea {
+  width: 100%; 
+  height: 100px; /* Adjust the height */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px;
+  resize: vertical; /* Allow only vertical resizing */
+  outline: none; /* Remove the default outline */
+}
+
+button {
+  padding: 10px 20px; /* Top-bottom, left-right padding */
+  background-color: #007BFF; /* You can choose your color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darken the button a bit on hover */
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PracticeTest from './components/PracticeTest'; // Import the PracticeTest component
 import OpenAI_Test from './components/openai';
+import bannerImage from './images/banner.jpg';
 
 
 const test = {
@@ -73,10 +74,12 @@ function App() {
 
   return (
     <div className="App">
+      <img src={bannerImage} alt="Top Banner" className="banner" />
+
       {showGen && <OpenAI_Test onValueChange={handleChildValueChange}/>}
       <hr />
 
-      {showTest && <PracticeTest test={test} onReturn={HandleTestReturn} />}
+      {showTest && <PracticeTest style={{padding: "20px"}} test={test} onReturn={HandleTestReturn} />}
     </div>
   );
 }
