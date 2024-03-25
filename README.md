@@ -1,2 +1,2 @@
 # testGenerator
-Personal project for Congressional App Challenge
+Personal project -- generate calculus questions for review
